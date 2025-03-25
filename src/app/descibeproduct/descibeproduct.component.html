@@ -1,0 +1,64 @@
+<body style="margin-top: 130px; background-color: #f8f9fa;">
+    <div class="container">
+      <div *ngIf="product" class="card product-card shadow-lg border-0 rounded-4 p-4">
+        <div class="row align-items-center">
+          
+          <!-- Left Side: Product Image -->
+          <div class="col-md-5 text-center">
+            <img [src]="product.imageurl" class="product-image" alt="Product Image">
+          </div>
+  
+          <!-- Right Side: Product Details -->
+          <div class="col-md-7">
+            <h3 class="fw-bold product-name">{{ product.name }}</h3>
+            <p class="text-muted"><strong>Description:</strong> {{ product.description }}</p>
+  
+            <!-- Pricing with Discount -->
+            <p class="pricing">
+              <span class="discounted-price">${{ product.discountedPrice || (product.price * 0.9) }}</span>
+              <span class="original-price">${{ product.price }}</span>
+              <span class="discount-badge">{{ product.discount || '10%' }} OFF</span>
+            </p>
+  
+            <p class="text-muted"><strong>Stock:</strong> {{ product.stock }}</p>
+            <p class="text-muted"><strong>Category:</strong> {{ product.category }}</p>
+  
+            <!-- Star Ratings -->
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star empty">☆</span>
+            </div>
+  
+            <!-- Centered Buttons -->
+            <div class="d-flex justify-content-center mt-4 gap-3">
+                <button class="btn btn-add-to-cart" (click)="addToCart()">
+                  <i class="bi bi-cart-plus"></i> Add to Cart
+                </button>
+                <button class="btn btn-buy">
+                  <i class="bi bi-bag-check"></i> Buy Now
+                </button>
+            </div>
+
+            <!-- Back to Products Button -->
+            <div class="text-center mt-3">
+              <button class="btn btn-back" [routerLink]="['/customprod']">
+                <i class="bi bi-arrow-left"></i> Back to Products
+              </button>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <div *ngIf="!product" class="text-center">
+        <h4 class="text-danger">Product not found</h4>
+      </div>
+    </div>
+
+  </body>
+  
+  

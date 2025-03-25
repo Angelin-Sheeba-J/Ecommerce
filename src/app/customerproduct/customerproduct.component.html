@@ -1,0 +1,61 @@
+<body style="background-color: #f7f7f7; margin-top: 100px;">
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="fw-bold text-danger page-title">
+                Product 
+            </h1>
+            <div class="d-flex justify-content-center my-4">
+                <div class="d-flex gap-2 w-150">
+                    <input type="text" class="form-control search-bar" placeholder="Search product..." [(ngModel)]="searchQuery" (input)="onSearch()" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @for(use of (searchQuery ? filteredProducts : user); track $index) {
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card product-card">
+                        <div class="card-body text-center position-relative">
+                            <!-- Heart Icon (Wishlist) -->
+                            <i class="bi" [ngClass]="isInWishlist(use) ? 'bi-heart-fill text-danger' : 'bi-heart'" 
+                               (click)="toggleWishlist(use)" class="wishlist-icon"></i>
+                    
+                            <img [src]="use.imageurl" (error)="onImageError(use)" class="product-image" alt="Product Image">
+                            
+                            <h6 class="card-title product-name">{{ use.name }}</h6>
+                            <p class="text-muted"><strong>Description:</strong> {{ use.description }}</p>
+                    
+                            <!-- Pricing with Discount -->
+                            <p class="pricing">
+                                <span class="discounted-price">${{ use.discountedPrice || (use.price * 0.9) }}</span>
+                                <span class="original-price">${{ use.price }}</span>
+                                <span class="discount-badge">{{ use.discount || '10%' }} OFF</span>
+                            </p>
+                    
+                            <p class="text-muted"><strong>Stock:</strong> {{ use.stock }}</p>
+                            <p class="text-muted"><strong>Category:</strong> {{ use.category }}</p>
+                    
+                            <!-- Star Ratings -->
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">☆</span>
+                            </div>
+                    
+                            <div class="d-flex justify-content-center mt-3 gap-2">
+                                <button class="btn view-btn" [routerLink]="['/describeprod', use.id]">
+                                    <i class="bi bi-eye"></i> View Product
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+

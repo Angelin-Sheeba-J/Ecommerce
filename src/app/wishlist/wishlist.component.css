@@ -1,0 +1,72 @@
+/* Wishlist Table Styling */
+.wishlist-table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-table thead {
+    background-color: #dc3545;
+    color: white;
+}
+
+.wishlist-table th, 
+.wishlist-table td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.wishlist-table th {
+    font-size: 1.2rem;
+}
+
+/* Product Image */
+.wishlist-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.wishlist-image:hover {
+    transform: scale(1.1);
+}
+
+/* Action Buttons */
+.action-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.action-btn i {
+    margin-right: 5px;
+}
+
+.btn-danger:hover {
+    background-color: #c70039;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: 0.3s;
+  }
+
+  .btn-back:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+  }
+

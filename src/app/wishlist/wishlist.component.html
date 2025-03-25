@@ -1,0 +1,44 @@
+<body style="margin-top: 150px;">
+    <div class="container">
+        <h1 class="fw-bold text-danger text-center mb-4">My Wishlist</h1>
+
+        <div class="table-responsive">
+            <table class="table table-bordered wishlist-table text-center">
+                <thead class="table-danger">
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(use of wishlist; track $index) {
+                        <tr>
+                            <td>
+                                <img [src]="use.imageurl" class="wishlist-image" alt="Product Image">
+                            </td>
+                            <td class="align-middle">{{ use.name }}</td>
+                            <td class="align-middle">${{ use.price }}</td>
+                            <td class="align-middle">
+                                <button class="btn btn-danger action-btn" (click)="removeFromWishlist(use)">
+                                    <i class="bi bi-trash"></i> Remove
+                                </button>
+                                <button class="btn btn-success action-btn" (click)="addToCart(use)">
+                                    <i class="bi bi-cart-plus"></i> Add to Cart
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-back" [routerLink]="['/customprod']">
+              <i class="bi bi-arrow-left"></i> Back to Products
+            </button>
+          </div>
+    </div>
+</body>
+
+

@@ -1,0 +1,21 @@
+<body class="role" style="margin-top: 100px;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-lg p-4" style="background: linear-gradient(to right, #fbc2eb, #a6c1ee); color: white; border: none;">
+            <h1 class="text-center mb-4 fw-bold">Welcome to Our Team!</h1>
+            <form [formGroup]="roleform" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="role" class="form-label fw-bold">Role</label>
+                <input type="text" formControlName="name" class="form-control shadow-sm" id="role" placeholder="Enter your role">
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-light btn-lg fw-bold">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+

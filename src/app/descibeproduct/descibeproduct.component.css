@@ -1,0 +1,132 @@
+/* Product Card Styling */
+.product-card {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 30px;
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Product Image (Left Side) */
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+/* Product Name */
+.product-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+}
+
+/* Pricing */
+.pricing {
+    font-size: 1.2rem;
+}
+.discounted-price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+.discount-badge {
+    background: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+/* Star Ratings */
+.rating {
+    display: flex;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+.star {
+    color: gold;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+.star:hover {
+    transform: scale(1.2);
+}
+.star.empty {
+    color: #bbb;
+}
+
+ .btn-add-to-cart {
+        background-color: #28a745;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: 0.3s;
+      }
+
+      .btn-add-to-cart:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+      }
+
+      .btn-buy {
+        background-color: #007bff;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: 0.3s;
+      }
+
+      .btn-buy:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      .btn-back {
+        background-color: #6c757d;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: 0.3s;
+      }
+
+      .btn-back:hover {
+        background-color: #5a6268;
+        transform: scale(1.05);
+      }
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        padding: 20px;
+    }
+    .product-image {
+        max-width: 200px;
+    }
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+

@@ -1,0 +1,56 @@
+<body style="background-color: white;margin-top: 100px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="container p-5 rounded">
+        <div class="row justify-content-center">
+            <div class="col-md-6" >
+                <div class="card shadow-lg border-0" >
+                    <div class="card-body p-4" style="background: linear-gradient(to right, #e0c3fc, #8ec5fc);" >
+                        <h2 class="text-center mb-4 text-primary fw-bold">Product Register Form</h2>
+                        <form [formGroup]="productform" (ngSubmit)="onSubmit()" 
+                              style=" padding: 20px; border-radius: 10px;">
+                            <div class="mb-3">
+                                <label for="name" class="form-label text-dark">Name</label>
+                                <input type="text" class="form-control border-primary" formControlName="name" id="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="des" class="form-label text-dark">Description</label>
+                                <input type="text" class="form-control border-primary" formControlName="description" id="des">
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label text-dark">Price</label>
+                                <input type="number" class="form-control border-primary" formControlName="price" id="price">
+                            </div>
+                            <div class="mb-3">
+                                <label for="stock" class="form-label text-dark">Stock</label>
+                                <input type="number" class="form-control border-primary" formControlName="stock" id="stock">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cat" class="form-label text-dark">Category</label>
+                                <input type="text" class="form-control border-primary" formControlName="category" id="cat">
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label text-dark">Image URL</label>
+                                <input type="file" class="form-control border-primary" (change)="onFileSelected($event)" id="image">
+                                @if (imagePreview) {
+                                    <div>
+                                      <img [src]="imagePreview" alt="Product Image" class="img-thumbnail mt-2" width="150">
+                                    </div>
+                                }
+                            </div>
+                            <div class="mb-3">
+                                <label for="user" class="form-label text-dark">User ID</label>
+                                <input type="number" class="form-control border-primary" formControlName="userId" id="user">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark btn-lg fw-bold shadow">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+    
+
+

@@ -1,0 +1,18 @@
+
+
+        .text-gradient {
+            background: linear-gradient(90deg, #ff007f, #ff66b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .focus-effect:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            border-color: #ff007f;
+            outline: none;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }

@@ -1,0 +1,56 @@
+<body style="background-color: #f7f7f7; margin-top: 100px;">
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="fw-bold text-danger" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                Product List
+            </h1>
+            <div class="d-flex justify-content-center my-4">
+                <div class="d-flex gap-2 w-150">
+                    <input
+                        type="text"
+                        class="form-control rounded-pill px-3"
+                        placeholder="Search product..."
+                        [(ngModel)]="searchQuery"
+                        (input)="onSearch()"
+                    />
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-primary btn-lg rounded-pill px-4 d-flex align-items-center"
+                    [disabled]="customer" [routerLink]="['/seller']">
+                    <i class="fas fa-plus-circle me-2"></i> Add Product
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            @for(use of (searchQuery ? filteredProducts : user); track $index) {
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card product-card shadow-lg border-0 rounded-4">
+                        <div class="card-body p-3 text-center">
+                            <img [src]="use.imageurl" (error)="onImageError(use)" class="product-image my-2" alt="Product Image">
+                            
+                            <h6 class="card-title fw-bold text-primary mt-2">{{ use.name }}</h6>
+                            <p class="text-muted mb-2"><strong>Description:</strong> {{ use.description }}</p>
+                            <p class="text-muted mb-1"><strong>Price:</strong> ${{ use.price }}</p>
+                            <p class="text-muted mb-1"><strong>Stock:</strong> {{ use.stock }}</p>
+                            <p class="text-muted mb-1"><strong>Category:</strong> {{ use.category }}</p>
+                            
+                            <div class="d-flex justify-content-center mt-3 gap-2">
+                                <button class="btn btn-success btn-sm rounded-pill px-3" [disabled]="customer" [routerLink]="['/prodedit',use.id]">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn btn-danger btn-sm rounded-pill px-3" [disabled]="customer" (click)="onDelete(use.id)">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+
+

@@ -1,0 +1,9 @@
+.nav-item,.logbtn{
+    font-size: large;
+}
+
+.nav-item:hover{
+    border:1px solid red;
+    background-color: red;
+    border-radius: 13px;
+}

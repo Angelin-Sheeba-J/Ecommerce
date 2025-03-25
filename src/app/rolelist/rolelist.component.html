@@ -1,0 +1,80 @@
+<!-- Role List -->
+ <body class="rolebody "  style="margin-top: 120px;">
+<div class="container mt-3 " >
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="text-danger fw-bold">Role List</h1>
+        <button class="btn btn-primary btn-lg rounded-pill px-4" [routerLink]="['/role']">
+            <i class="bi bi-plus-circle"></i> Add Role
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Role ID</th>
+                    <th>Role Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let use of role; let i = index">
+                    <td>{{ use.id }}</td>
+                    <td>{{ use.name }}</td>
+                    <td>
+                        <button class="btn btn-success rounded-pill px-3 me-3" (click)="onDelete(use.id)">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                        <button class="btn btn-info rounded-pill px-4" (click)="onViewUsers(use.id)">
+                            <i class="bi bi-eye"></i> View Users
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- User Details Popup Modal -->
+<div class="modal fade" #userDetailsModal tabindex="-1" aria-labelledby="userDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary">
+                    User Details: {{ selectedRoleId }}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div *ngFor="let use of users; let i = index" class="col-md-6 col-lg-4 mb-4">
+                        <div class="card shadow-lg border-0 rounded-3">
+                            <div class="card-body p-4">
+                                <h5 class="card-title fw-bold text-primary">{{ use.name }}</h5>
+                                <p class="text-muted mb-2"><strong>Email:</strong> {{ use.email }}</p>
+                                <p class="text-muted mb-2"><strong>Role ID:</strong> {{ use.roleId }}</p>
+                                <p class="text-muted mb-2"><strong>Last Name:</strong> {{ use.userdetails?.lastName || 'N/A' }}</p>
+                                <p class="text-muted mb-2"><strong>Mobile:</strong> {{ use.userdetails?.mobile || 'N/A' }}</p>
+                                <p class="text-muted mb-2"><strong>Gender:</strong> {{ use.userdetails?.gender || 'N/A' }}</p>
+                                <p class="text-muted mb-2"><strong>Date of Birth:</strong> {{ use.userdetails?.dateOfBirth || 'N/A' }}</p>
+                                <p class="text-muted mb-2"><strong>Address:</strong> {{ use.userdetails?.address || 'N/A' }}</p>
+                                <p class="text-muted mb-2"><strong>User ID:</strong> {{ use.userdetails?.userId || 'N/A' }}</p>
+                            </div>
+                            <!-- <div class="d-flex justify-content-center flex-wrap">
+                                <button class="btn btn-success btn-sm me-1 my-1" [routerLink]="['/edit', use.id]">Edit</button>
+                                <button class="btn btn-danger btn-sm me-1 my-1" (click)="onDelete(use.id)">Delete</button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+/* Gradient background for the entire page */
+.rolebody {
+    background:white;
+    min-height: 100vh;
+}
+
+/* Gradient for the Role List header */
+h1 {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Gradient for buttons */
+.btn-success {
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    border: none;
+    color: white;
+}
+
+.btn-info {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #ff512f, #dd2476);
+    border: none;
+    color: white;
+}
+
+/* Modal background gradient */
+.modal-content {
+    /* background: linear-gradient(to right, #fbc2eb, #a6c1ee); */
+    color: white;
+}
+
+/* Gradient card effect */
+.card {
+    background: linear-gradient(to right, #fc4a1a, #f7b733);
+    color: white;
+    border: none;
+}
